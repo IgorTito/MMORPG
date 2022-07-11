@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65c0b2aa-ab96-43ef-9d89-58fe2b5f98a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../PortalNews/middlewares.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PortalNews/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PortalNews/translation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../templates/swagger-ui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewsBlog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NewsBlog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewsBlog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NewsBlog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortalNews/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PortalNews/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortalNews/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PortalNews/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortalNews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PortalNews/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortalNews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PortalNews/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/../templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/flatpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/../templates/flatpages/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/../templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/../templates/posts.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2BG8cfyrujgyNp80Ez7VFZi2WBZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65c0b2aa-ab96-43ef-9d89-58fe2b5f98a2" name="Changes" comment="" />
+      <created>1656521143732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656521143732</updated>
+    </task>
+    <servers />
+  </component>
+</project>

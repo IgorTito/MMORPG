@@ -1,0 +1,80 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Ad
+{% endblock title %}
+
+{% block content %}
+{% if request.user.username %}
+    <h1>Добро пожаловать,  {{request.user.username}}</h1> <button><a href="/sign/logout">{{ "Выйти" }}</a></button>
+
+
+    {% else %}
+    <button><a href="/accounts/signup">{{ "Регистрация" }} </a></button>
+    <button><a href="/accounts/login/">{{ "Войти" }} </a></button>
+    {% endif %}
+<hr>
+{% if ad %}
+<style type="text/css">
+   TABLE {
+    width: 100%; /* Ширина таблицы */
+    border: 1px solid #399; /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между границ */
+   }
+   TD {
+    border: 2px solid DodgerBlue; /* Граница вокруг ячеек */
+    padding: 5px; /* Поля в ячейках */
+   }
+  </style>
+<table style="font:26px verdana">
+
+    <tr>
+        <td> {{"Автор"}}</td>
+        <td> {{"Заголовок"}}</td>
+        <td> {{ "Дата" }}</td>
+        <td> {{"Текст объявления"}}</td>
+        <td> {{ "Изображение" }}</td>
+        <td> {{ "Файл" }}</td>
+        <td> {{"Рейтинг"}}</td>
+        <td> {{"Категория"}}</td>
+        <td> {{"Комментирии"}}</td>
+    </tr>
+    {% for i in ad %}
+    <tr>
+        <td> {{ i.author }}</td>
+        <td> {{ i.ad_theme }}</td>
+        <td> {{ i.date_of_create }}</td>
+        <td>{{ i.text_of_ad|truncatechars:15 }}<a href="{{i.id}}" style="font-size:20px">читать полностью</a></td>
+        <td>{% if i.upload_image %} {{ i.upload_image }}<a href="{{ i.upload_image.url }}"style="font-size:20px">посмотреть</a> {% endif %}</td>
+        <td> {{ i.upload_file }}</td>
+        <td> {{ i.rating }}</td>
+        <td> {{ i.categoryAd }}</td>
+        <td><a href="/{{i.id}}/echo/create" style="font-size:20px">Оставить комментарий</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{# Добавляем пагинацию на страницу #}
+
+   {# Информация о предыдущих страницах #}
+   {% if page_obj.has_previous %}
+       <a href="?page=1">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+
+{% endblock content %}

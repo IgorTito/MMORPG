@@ -1,0 +1,7 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+
+{% for a in data %}<img src="{{ a.upload_image.url }}">{% endfor %}
+
+{% endblock content %}

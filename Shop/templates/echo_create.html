@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+
+{% if request.user.username %}
+ <input type="hidden" name="author" value="{{ request.user.id }}">
+<h1>Создание комментария</h1>
+<hr>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить" />
+</form>
+<button> <a href="/">На главную</a> </button>
+{% else %}
+<h2>Для того, чтобы оставить комментарий, необходимо зарегистрироваться</h2>
+<button> <a href="/accounts/signup">Регистрация</a> </button>
+<button> <a href="/">На главную</a> </button>
+{% endif %}
+{% endblock content %}

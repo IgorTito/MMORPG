@@ -1,0 +1,45 @@
+{% extends 'flatpages/default.html' %}
+{% block content %}
+<div>
+<!--<div>-->
+<!--    Commentaries:-->
+<!--    {% for item in echo %}-->
+<!--    <div class="card mb-3">-->
+<!--        <h5 class="card-title">{{ item.echo_author.username }}</h5>-->
+<!--        <p class="card-text">{{ item.echo_text }}</p>-->
+<!--    </div>-->
+<!--    {% empty %}-->
+<!--    No commentaries yet-->
+<!--    {% endfor %}-->
+</div>
+<style type="text/css">
+   TABLE {
+    width: 100%; /* Ширина таблицы */
+    border: 1px solid #399; /* Граница вокруг таблицы */
+    border-spacing: 7px 5px; /* Расстояние между границ */
+   }
+   TD {
+    border: 2px solid DodgerBlue; /* Граница вокруг ячеек */
+    padding: 5px; /* Поля в ячейках */
+   }
+  </style>
+<table style="font:26px verdana">
+
+    <tr>
+        <td> {{"Автор комментария"}}</td>
+        <td> {{"Текст"}}</td>
+        <td> {{"Дата"}}</td>
+
+    </tr>
+    {% for i in echo %}
+    <tr>
+        <td> {{ i.echo_author }}</td>
+        <td> {{ i.echo_text }}</td>
+        <td> {{ i.echo_date }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+{% endblock content %}
