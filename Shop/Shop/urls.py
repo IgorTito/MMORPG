@@ -7,8 +7,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('Billboard.urls')),
     path('sign/', include('sign.urls')),
-
-
 ]
 
 from django.conf import settings

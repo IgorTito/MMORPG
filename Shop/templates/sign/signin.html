@@ -3,10 +3,6 @@
 {% block content %}
 
 <h1>Вы вошли как,  {{request.user.username}}</h1>
-<div> Здесь может содержаться персональная информация для каждого пользователя </div>
-    {% if not_be_an_author %}
-        <button> <a href="/posts/upgrade"> Стать автором!</a> </button>
-    {% endif %}
 <button> <a href="/sign/logout">Выйти</a> </button>
 <button> <a href="/">На главную</a> </button>
 {% endblock %}

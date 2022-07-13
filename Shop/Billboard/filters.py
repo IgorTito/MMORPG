@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 import django.forms
 from django_filters import FilterSet, DateTimeFilter
 from .models import Ad

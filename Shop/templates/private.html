@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if request.user.username %}
-<h2>Приветствую,   {{request.user.username}} !</h2>
+<h2 align="center">Приветствую,   {{request.user.username}} !</h2>
 <hr>
     <style type="text/css">
        TABLE {
@@ -25,7 +25,6 @@
             <td> {{"Текст объявления"}}</td>
             <td> {{ "Изображение" }}</td>
             <td> {{ "Файл" }}</td>
-            <td> {{"Рейтинг"}}</td>
             <td> {{"Категория"}}</td>
             <td> {{"Удалить/Изменить/Отклики"}}</td>
 
@@ -38,7 +37,6 @@
             <td> {{ i.text_of_ad }}</td>
             <td> {% if i.upload_image %} {{ i.upload_image }}<a href="{{ i.upload_image.url }}"style="font-size:20px">посмотреть</a> {% endif %}</td>
             <td> {{ i.upload_file }}</td>
-            <td> {{ i.rating }}</td>
             <td> {{ i.categoryAd }}</td>
             <td><a href="/{{i.id}}/update" style="font-size:20px">Изменить</a> <a href="/{{i.id}}/delete" style="font-size:20px">Удалить</a>
             <a href="/{{i.id}}/echo" style="font-size:20px">Отклики</a></td>

@@ -5,9 +5,15 @@ Ad
 {% endblock title %}
 
 {% block content %}
+
 {% if request.user.username %}
     <h1>Добро пожаловать,  {{request.user.username}}</h1> <button><a href="/sign/logout">{{ "Выйти" }}</a></button>
-
+<hr>
+   <form action="" method="get">
+       {{ filter.form.as_p }}
+       <input type="submit" value="Найти" />
+   </form>
+<hr>
 
     {% else %}
     <button><a href="/accounts/signup">{{ "Регистрация" }} </a></button>
@@ -35,9 +41,8 @@ Ad
         <td> {{"Текст объявления"}}</td>
         <td> {{ "Изображение" }}</td>
         <td> {{ "Файл" }}</td>
-        <td> {{"Рейтинг"}}</td>
         <td> {{"Категория"}}</td>
-        <td> {{"Комментирии"}}</td>
+
     </tr>
     {% for i in ad %}
     <tr>
@@ -47,9 +52,8 @@ Ad
         <td>{{ i.text_of_ad|truncatechars:15 }}<a href="{{i.id}}" style="font-size:20px">читать полностью</a></td>
         <td>{% if i.upload_image %} {{ i.upload_image }}<a href="{{ i.upload_image.url }}"style="font-size:20px">посмотреть</a> {% endif %}</td>
         <td> {{ i.upload_file }}</td>
-        <td> {{ i.rating }}</td>
         <td> {{ i.categoryAd }}</td>
-        <td><a href="/{{i.id}}/echo/create" style="font-size:20px">Оставить комментарий</a></td>
+
     </tr>
     {% endfor %}
 </table>

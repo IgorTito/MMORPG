@@ -36,7 +36,6 @@ class Ad(models.Model):
     upload_file = models.FileField(upload_to="uploads/", null=True, blank=True, verbose_name="Файл")
     upload_image = models.ImageField(upload_to="uploads/", null=True, blank=True, verbose_name="Изображение")
 
-
     def get_absolute_url(self):
         return f'http://127.0.0.1:8000/'
 
@@ -50,7 +49,7 @@ class Echo(models.Model):
     echo_text = models.TextField(max_length=512, verbose_name="Текст комментария")
     echo_ad = models.ForeignKey(Ad, on_delete=models.CASCADE, verbose_name="Объявление", related_name="echo_ads")
     echo_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата")
-
+    echo_status = models.BooleanField(default=False)
 
     class Meta():
         verbose_name = "Отклик"

@@ -1,17 +1,5 @@
 {% extends 'flatpages/default.html' %}
 {% block content %}
-<div>
-<!--<div>-->
-<!--    Commentaries:-->
-<!--    {% for item in echo %}-->
-<!--    <div class="card mb-3">-->
-<!--        <h5 class="card-title">{{ item.echo_author.username }}</h5>-->
-<!--        <p class="card-text">{{ item.echo_text }}</p>-->
-<!--    </div>-->
-<!--    {% empty %}-->
-<!--    No commentaries yet-->
-<!--    {% endfor %}-->
-</div>
 <style type="text/css">
    TABLE {
     width: 100%; /* Ширина таблицы */
@@ -29,14 +17,17 @@
         <td> {{"Автор комментария"}}</td>
         <td> {{"Текст"}}</td>
         <td> {{"Дата"}}</td>
-
+        <td> {{"Статус"}}</td>
     </tr>
     {% for i in echo %}
     <tr>
         <td> {{ i.echo_author }}</td>
         <td> {{ i.echo_text }}</td>
         <td> {{ i.echo_date }}</td>
-
+        <td> {%if i.echo_status == False %} <button> <a href="/">Принять</a> </button>
+        {% else %}
+            {{ i.echo_status }}</td>
+        {% endif %}
     </tr>
     {% endfor %}
 </table>

@@ -10,7 +10,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
 </head>
-<body class="d-flex flex-column h-100">
+<body  align="center">
 
 <main class="flex-shrink-0">
     <!-- Navigation-->
@@ -25,7 +25,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-
                     <li class="nav-item active">
                     </li>
                     <li class="nav-item">
@@ -35,9 +34,6 @@
                         <a class="nav-link" href="/private/"> Личный кабинет</a>
                     </li>
                     <li><a class="nav-link" href="/ad/create">Создать объявление</a></li>
-
-
-
         <input type="hidden" name="next" value="{{ redirect_to }}">
                 </ul>
             </div>

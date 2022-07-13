@@ -1,11 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User, Group
-from django.core.exceptions import ValidationError
-from django.forms import ModelForm
 
 from .models import Ad, Echo
-
 
 
 class AdForm(forms.ModelForm):
@@ -19,10 +14,10 @@ class AdForm(forms.ModelForm):
             "upload_image",
         ]
 
+
 class EchoForm(forms.ModelForm):
     class Meta:
         model = Echo
         fields = [
             "echo_text",
-            # "echo_ad",
         ]

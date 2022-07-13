@@ -27,7 +27,6 @@ Ad
         <td> {{"Текст объявления"}}</td>
         <td> {{ "Изображение" }}</td>
         <td> {{ "Файл" }}</td>
-        <td> {{"Рейтинг"}}</td>
         <td> {{"Категория"}}</td>
     </tr>
     <tr>
@@ -37,9 +36,36 @@ Ad
         <td>{{ one.text_of_ad }}</td>
         <td>{% if one.upload_image %} {{ one.upload_image }}<a href="{{ one.upload_image.url }}"style="font-size:20px">посмотреть</a> {% endif %}</td>
         <td> {{ one.upload_file }}</td>
-        <td> {{ one.rating }}</td>
         <td> {{ one.categoryAd }}</td>
     </tr>
 </table>
+    <p> Комментарии ({{ one.echo_ads.all.count }})</p>
+
+{% for e in one.echo_ads.all %}
+<li>
+    Дата создания - {{ e.echo_date }} <br>
+    Автор - {{ e.echo_author }} <br>
+    Статус - {{ e.echo_status }} <br>
+    {{ e.echo_text }}
+</li>
+
+{% endfor %}
+    <hr>
+
+    <p> Добавить комментарий </p>
+
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for m in messages %}
+        {{m}}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Добавить" />
+    </form>
 {% endif %}
 {% endblock content %}
